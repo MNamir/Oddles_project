@@ -1,0 +1,27 @@
+<header class="header">
+  <nav class="menu_logo_wrapper">
+    <div class="logo">
+      <a routerLink="" >
+        <img src="../../../assets/icons/logo.png" alt="Oodles">
+      </a>
+    </div>
+    <ul class="menu">
+      <li><a routerLink="" class="active">HOME</a></li>
+      <li><a routerLink="" >PORTFOLIO</a></li>
+      <li><a routerLink="" >Technologies</a></li>
+      <li><a routerLink="" >Marketing Insight </a></li>
+      <li class="haschildren" >
+        <a (click)="subMenu()">SERVICES <img src="./../../../assets/icons/arrow.png" alt="Arrow"></a>
+        <ul class="submenu">
+          <li><a>SMART CONTRACTS DEVELOPMENT</a></li>
+          <li><a>EXCHANGES</a></li>
+          <li><a>BLOCKCHAIN DEVELOPMENT</a></li>
+          <li><a>HYPERLEDGER</a></li>
+          <li><a>PRIVATE BLOCKCHAIN DEVELOPMENT</a></li>
+          <li><a>Wallet</a></li>
+        </ul>
+      </li>
+      <li><a routerLink="" >ABOUT US</a></li>
+    </ul>
+  </nav>
+</header>

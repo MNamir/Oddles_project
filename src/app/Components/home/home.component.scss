@@ -1,0 +1,38 @@
+.home {
+  background: url("./../../../assets/backgrounds/Rectangle 11.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 38px 0;
+  position: relative;
+  background-size: 100% 100%;
+  margin-bottom: 50px;
+}
+.home_flex_wrap {
+  align-items: center;
+  padding-bottom: 150px;
+  .home_text {
+    font-size: 93px;
+    color: #fff;
+    font-weight: 300;
+    .break {font-weight: 400;font-size: 129px;}
+  }
+}
+
+
+.feature_bitcoin {
+  position: absolute;
+  bottom: -40px;
+  width: 500px;
+  height: 213px;
+.home_bitcoin_wrap {
+  position: relative;
+  .bitcoin_1 {position: absolute;top: 0;z-index: 2;left: 0;}
+  .bitcoin_2 {
+    position: absolute;
+    top: 20px;
+    left: 155px;
+    z-index: 1;
+  }
+}
+
+}

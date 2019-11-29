@@ -1,0 +1,13 @@
+<div class="service_sec_wrap">
+  <div class="container">
+  <h2 class="section_title">Our Services</h2>
+  <div class="flex_wrap service_flex_wrap">
+    <div class="col-4" *ngFor="let data of imgData">
+      <app-servicetype [imgUrl]="data.src" [textImg]="data.text" [subText]="data.subText"></app-servicetype>
+    </div>
+  </div>
+  <div class="btn_wrap_center">
+    <a class="service_btn" routerLink="">View All Services</a>
+  </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+.contact_wrapper {
+  background: url("./../../../assets/backgrounds/Rectangle 13.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 60px 0;
+  .contact_wrapper_flex_wrap {
+    align-items: center;
+    .contact_text {
+      font-size: 34px;
+      color: #fff;
+    }
+  }
+
+}
+
+

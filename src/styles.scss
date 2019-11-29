@@ -1,1 +1,165 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap');
+@import "./../node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.carousel.scss";
+@import "./../node_modules/ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* make sure to set some focus styles for accessibility */
+:focus {
+  outline: 0;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  font-family: 'Lato', sans-serif;
+}
+
+ol, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+html {
+  font-size: 100%; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -ms-text-size-adjust: 100%; /* 2 */
+}
+
+a:active,
+a:hover,
+a:focus,
+a{
+  outline: 0;
+  text-decoration: none;
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+/* ------ Extend Css ------------------- */
+%flex_wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+%col-4 {
+  width: 33.33%;
+  flex-basis: 33.33%;
+}
+%col-6 {
+  width: 50%;
+  flex-basis: 50%;
+}
+%col-8{
+  width: 66.67%;
+  flex-basis: 66.67%;
+}
+%btn_wrap_center {
+  display: flex;
+  justify-content: center;
+}
+%break {
+  display: block;
+}
+%col-pad{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+/* ------------ Global Css --------------------- */
+[class*="col"] {
+  @extend %col-pad;
+}
+
+.flex_wrap {
+  @extend %flex_wrap;
+}
+
+.col-4 {
+  @extend %col-4;
+  @extend %col-pad;
+}
+
+.col-6 {
+  @extend %col-6;
+  @extend %col-pad;
+}
+
+.col-8{
+  @extend %col-8;
+  @extend %col-pad;
+}
+
+.btn_wrap_center {
+  @extend %btn_wrap_center;
+}
+
+.break {
+  @extend %break;
+}
+
+.section_title {
+  font-size: 61px;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.service_btn {
+  display: inline-block;
+  padding: 10px 40px;
+  font-size: 24px;
+  background: #fff;
+  color: #154e7d;
+  font-weight: 400;
+  border: 2px solid #154e7d;
+  border-radius: 10px;
+}
+
+.container{
+  max-width: 1282px;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+  margin: 0 auto;
+}

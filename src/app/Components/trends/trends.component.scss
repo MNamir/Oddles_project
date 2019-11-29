@@ -1,0 +1,25 @@
+.trends_wrapper {
+  position: relative;
+  padding: 170px 0 100px;
+  .trend_bg_img {
+    background: url("./../../../assets/backgrounds/4683.png");
+    height: 690px;
+    background-size: 100% 100%;
+    width: 100%;
+    position: absolute;
+    background-repeat: no-repeat;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+  .section_title {
+    color: #fff;
+  }
+}
+
+.trends_flex_wrap {
+  padding-top: 70px;
+  .col-4 {
+    text-align: center;
+  }
+}

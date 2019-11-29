@@ -1,0 +1,47 @@
+<div class="contact_outer_wrap">
+<div class="contact_form_wrap">
+  <div class="title">Contact Us</div>
+  <div class="subtitle">How can we help you?</div>
+  <form [formGroup]="registerform" (ngSubmit)="onSubmit()">
+    <div class="field_wrap">
+      <input type="text" formControlName="userName" placeholder="Your Name" name="username" class="text_field">
+      <div class="feedback" *ngIf="submitted && f.userName.errors && f.userName.touched">
+        <ng-container *ngIf="f.userName.errors.required">Username is required.</ng-container>
+        <ng-container *ngIf="f.userName.errors.minlength">Username must have 3 words.</ng-container>
+      </div>
+    </div>
+    <div class="field_wrap">
+      <input type="email" formControlName="email" placeholder="Your email address" name="email" class="text_field">
+      <div class="feedback" *ngIf="submitted && f.email.errors && f.email.touched">
+        <ng-container *ngIf="f.email.errors.required">E-mail is required.</ng-container>
+        <ng-container *ngIf="f.email.errors.pattern">Please provide a valid e-mail</ng-container>
+      </div>
+    </div>
+    <div class="field_wrap">
+      <input type="text" placeholder="Company" formControlName="company" name="company" class="text_field">
+      <div class="feedback" *ngIf="submitted && f.company.errors && f.company.touched">
+        <ng-container *ngIf="f.company.errors.required">Fill your comapany name.</ng-container>
+        <ng-container *ngIf="f.company.errors.pattern">Special characters are not allowed.</ng-container>
+      </div>
+    </div>
+    <div class="field_wrap">
+      <input type="text" formControlName="subject" placeholder="Your Subject" name="subject" class="text_field">
+      <div class="feedback" *ngIf="submitted && f.subject.errors && f.subject.touched">
+        <ng-container *ngIf="f.subject.errors.required">Subject is required.</ng-container>
+        <ng-container *ngIf="f.subject.errors.maxlength">More than 32 character isn't allowed.</ng-container>
+      </div>
+    </div>
+    <div class="field_wrap">
+      <textarea placeholder="Your Message..." formControlName="message" name="message"></textarea>
+      <div class="feedback" *ngIf="submitted && f.message.errors && f.message.touched">
+        <ng-container *ngIf="f.message.errors.required">Message is required.</ng-container>
+        <ng-container *ngIf="f.message.errors.minlength">Minimum 30 character allowed only.</ng-container>
+        <ng-container *ngIf="f.message.errors.maxlength">More than 150 character isn't allowed</ng-container>
+      </div>
+    </div>
+    <div class="btn_wrap_center">
+      <button type="submit" class="form_btn" [disabled]="!registerform.valid">Submit</button>
+    </div>
+  </form>
+</div>
+</div>

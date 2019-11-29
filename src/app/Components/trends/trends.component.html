@@ -1,0 +1,17 @@
+<div class="trends_wrapper">
+  <div class="container">
+  <div class="trend_bg_img"></div>
+<h2 class="section_title">Trends</h2>
+    <owl-carousel-o [options]="customOptions" class="flex_wrap trends_flex_wrap">
+          <ng-template carouselSlide class="col-4">
+            <app-trendtype trendImg="./../../../assets/sliders/Real-Estate-Investment-Dropping.png" [title]="'How Blockchain Technology'" [subtitle]="'Will Fortify'" [moreText]="'Real Estate Industry'"></app-trendtype>
+          </ng-template>
+          <ng-template carouselSlide class="col-4">
+            <app-trendtype trendImg="./../../../assets/sliders/cybercrime2.png" title="Blockchain Technology" subtitle="Can Help" moreText="Fight Cyber Crimes"></app-trendtype>
+          </ng-template >
+          <ng-template carouselSlide  class="col-4">
+            <app-trendtype [trendImg]="'./../../../assets/sliders/businessman-business-sketch.png'" title="How Blockchain Technology" subtitle="Contributing To" moreText="Research & Development"></app-trendtype>
+          </ng-template>
+    </owl-carousel-o>
+  </div>
+</div>
