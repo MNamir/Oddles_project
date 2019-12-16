@@ -1,6 +1,7 @@
 .contact_form_wrap {
   padding: 20px;
   background: #fff;
+
   .title {
     font-size: 34px;
     letter-spacing: 1px;
@@ -8,6 +9,7 @@
     text-align: center;
     color: #4a4949;
   }
+
   .subtitle {
     font-size: 15px;
     text-align: center;
@@ -19,6 +21,23 @@
 
 .field_wrap {
   padding-bottom: 10px;
+
+  &.checkbox {
+    display: flex;
+    align-items: flex-end;
+    color: #4a4949;
+
+    label {
+      padding-left: 5px;
+    }
+
+    input {
+      height: 15px;
+      width: 15px;
+    }
+
+  }
+
   .text_field {
     border: 2px solid #585858;
     border-radius: 5px;
@@ -27,11 +46,13 @@
     font-size: 16px;
     color: #585858;
     letter-spacing: 0.5px;
-    &.ng-invalid{
+
+    &.ng-invalid {
       &.ng-touched {
         border-color: #bd0505;
       }
     }
+
     &::-webkit-input-placeholder {
       color: #484848;
       opacity: 1;
@@ -40,6 +61,7 @@
       letter-spacing: 0.5px;
     }
   }
+
   textarea {
     border: 2px solid #585858;
     border-radius: 5px;
@@ -49,11 +71,13 @@
     color: #585858;
     height: 100px;
     letter-spacing: 0.5px;
-    &.ng-invalid{
+
+    &.ng-invalid {
       &.ng-touched {
         border-color: #bd0505;
       }
     }
+
     &::-webkit-input-placeholder {
       color: #484848;
       opacity: 1;
@@ -63,6 +87,7 @@
     }
   }
 }
+
 .form_btn {
   display: block;
   background: #0072a9;
@@ -73,16 +98,17 @@
   font-size: 16px;
   letter-spacing: 1px;
   cursor: pointer;
+
   &[disabled] {
     opacity: .5;
     cursor: not-allowed;
   }
 }
+
 .feedback {
   padding-top: 5px;
   color: #bd312e;
 }
-
 
 
 
