@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import validate = WebAssembly.validate;
 import {reduce} from 'rxjs/operators';
 import {colors} from '@angular/cli/utilities/color';
+import {isBoolean} from 'util';
 
 @Component({
   selector: 'app-contact-form',
@@ -12,6 +13,8 @@ import {colors} from '@angular/cli/utilities/color';
 export class ContactFormComponent implements OnInit {
   registerform: FormGroup;
   submitted = true;
+  isChecked: boolean;
+  uservalue: string;
   emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   constructor(private formBuilder: FormBuilder) {
@@ -29,6 +32,7 @@ export class ContactFormComponent implements OnInit {
       message: ['', [Validators.required, Validators.minLength(30), Validators.maxLength(150)]],
       Termsconditions: [false, [Validators.requiredTrue]]
     });
+    // document.getElementById('username').addEventListener('change', this.worldMarch);
   }
 
   onSubmit() {
@@ -36,26 +40,33 @@ export class ContactFormComponent implements OnInit {
       alert('Contact form has been submitted successfully.');
       console.log(JSON.stringify(this.registerform.value, null, 4));
       this.registerform.reset();
+      this.isChecked = isBoolean();
     }
   }
 
   get f() {
     return this.registerform.controls;
   }
-
+  checked() {
+     this.isChecked = !this.isChecked;
+  }
   getColor() {
-    const checkBox = this.registerform.controls.Termsconditions
-    if ( checkBox.touched && checkBox) {
-      return 'green';
-      // alert('Green');
-    }
-    if (checkBox.touched && checkBox.errors) {
-      return 'red';
-      // alert('Red');
-    }
-    if (checkBox.untouched && !checkBox) {
+    const checkBox = this.registerform.controls.Termsconditions;
+    if (this.isChecked === true) {
+        return 'green';
+      } else if (this.isChecked === false) {
+        return 'red';
+      } else if (this.isChecked === undefined) {
       return '#4a4949';
-      // alert('#4a4949');
+    }
+  }
+  worldMarch() {
+    const restrictWord = ['Dev', 'fool', 'test'];
+    for (let i = 0; i < restrictWord.length; i++ ) {
+      if (this.uservalue.match(restrictWord[i])) {
+        this.uservalue = '';
+        alert('Plese Provide an Valid Value Only');
+      }
     }
   }
 }

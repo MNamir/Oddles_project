@@ -4,7 +4,8 @@
     <div class="subtitle">How can we help you?</div>
     <form [formGroup]="registerform" (ngSubmit)="onSubmit()">
       <div class="field_wrap">
-        <input type="text" formControlName="userName" placeholder="Your Name" name="username" class="text_field">
+
+        <input type="text" formControlName="userName" id="username" placeholder="Your Name" name="username" class="text_field" [(ngModel)]="uservalue" (change)="worldMarch()">
         <div class="feedback" *ngIf="submitted && f.userName.errors && f.userName.touched">
           <ng-container *ngIf="f.userName.errors.required">Username is required.</ng-container>
           <ng-container *ngIf="f.userName.errors.minlength">Username must have 3 words.</ng-container>
@@ -47,10 +48,15 @@
           <ng-container *ngIf="f.message.errors.maxlength">More than 150 character isn't allowed</ng-container>
         </div>
       </div>
-      <div class="field_wrap checkbox" [ngStyle]="{'color': getColor()}"
-      >
-        <input type="checkbox" formControlName="Termsconditions" name="Termsconditions" id="accept_terms">
-        <label for="accept_terms">Accept Terms & Conditions</label>
+      <div class="field_wrap checkbox">
+        <label for="accept_terms" [ngStyle]="{'color': getColor()}">
+          <input type="checkbox" formControlName="Termsconditions" name="Termsconditions" id="accept_terms" [checked]="isChecked" (click)="checked()">
+          Accept Terms & Conditions
+        </label>
+<!--        <label for="accept_terms" [ngClass]="{'green':isChecked === true, 'red':isChecked === false, 'grey': isChecked === undefined}">-->
+<!--          <input type="checkbox" formControlName="Termsconditions" name="Termsconditions" id="accept_terms" [checked]="isChecked" (click)="checked()">-->
+<!--          Accept Terms & Conditions-->
+<!--        </label>-->
       </div>
       <div class="btn_wrap_center">
         <button type="submit" class="form_btn" [disabled]="!registerform.valid">Submit</button>

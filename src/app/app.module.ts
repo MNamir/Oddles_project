@@ -15,6 +15,7 @@ import { TrendtypeComponent } from './Components/trendtype/trendtype.component';
 import {CarouselModule} from 'ngx-owl-carousel-o';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ReactiveFormsModule} from '@angular/forms';
+import {PopupComponent} from './Components/popup/popup.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     ContactFormComponent,
     HomeComponent,
     ServicetypeComponent,
-    TrendtypeComponent
+    TrendtypeComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,

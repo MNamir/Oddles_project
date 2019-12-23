@@ -7,7 +7,8 @@
     </div>
   </div>
   <div class="btn_wrap_center">
-    <a class="service_btn" routerLink="">View All Services</a>
+    <a class="service_btn" (click)="openModal()">View All Services</a>
   </div>
   </div>
 </div>
+<app-popup (popupClose)="closeModal()"></app-popup>

@@ -1,9 +1,16 @@
-.service_text {
-  h5 {
-    font-size: 24px;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding-top: 10px;
+
+.service_wrap{
+  transition: all .5s ease-in-out;
+  &.scale{
+      transform: scale(1.2,1.2);
+  }
+  .service_text {
+    h5 {
+      font-size: 24px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding-top: 10px;
+    }
   }
 }
