@@ -5,7 +5,7 @@
     <form [formGroup]="registerform" (ngSubmit)="onSubmit()">
       <div class="field_wrap">
 
-        <input type="text" formControlName="userName" id="username" placeholder="Your Name" name="username" class="text_field" [(ngModel)]="uservalue" (change)="worldMarch()">
+        <input type="text" formControlName="userName" id="username" placeholder="Your Name" name="username" class="text_field" [(ngModel)]="userValue" (change)="match()">
         <div class="feedback" *ngIf="submitted && f.userName.errors && f.userName.touched">
           <ng-container *ngIf="f.userName.errors.required">Username is required.</ng-container>
           <ng-container *ngIf="f.userName.errors.minlength">Username must have 3 words.</ng-container>

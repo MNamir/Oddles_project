@@ -14,7 +14,7 @@ export class ContactFormComponent implements OnInit {
   registerform: FormGroup;
   submitted = true;
   isChecked: boolean;
-  uservalue: string;
+  userValue: string;
   emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   constructor(private formBuilder: FormBuilder) {
@@ -60,11 +60,11 @@ export class ContactFormComponent implements OnInit {
       return '#4a4949';
     }
   }
-  worldMarch() {
+  match() {
     const restrictWord = ['Dev', 'fool', 'test'];
     for (let i = 0; i < restrictWord.length; i++ ) {
-      if (this.uservalue.match(restrictWord[i])) {
-        this.uservalue = '';
+      if (this.userValue.match(restrictWord[i])) {
+        this.userValue = '';
         alert('Plese Provide an Valid Value Only');
       }
     }
