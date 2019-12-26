@@ -61,11 +61,12 @@ export class ContactFormComponent implements OnInit {
     }
   }
   match() {
-    const restrictWord = ['Dev', 'fool', 'test'];
-    for (let i = 0; i < restrictWord.length; i++ ) {
-      if (this.userValue.match(restrictWord[i])) {
-        this.userValue = '';
-        alert('Plese Provide an Valid Value Only');
+    const restrictWord = ['dev', 'fool', 'test'];
+    for (const word of restrictWord) {
+      if (this.userValue) {
+        if (this.userValue.toLowerCase().match(word)) {
+          this.userValue = '';
+        }
       }
     }
   }
