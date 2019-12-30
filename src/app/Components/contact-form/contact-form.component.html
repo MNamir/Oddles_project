@@ -33,6 +33,14 @@
         </div>
       </div>
       <div class="field_wrap">
+        <input formControlName="number" type="tel" class="text_field" #viewnumber placeholder="Your Number" id="number" [(ngModel)]="num" (keyup)="numBer()" autocomplete="false">
+       <div class="feedback" *ngIf="f.number.errors && f.number.touched">
+         <ng-container *ngIf="f.number.errors.required">Number is Required</ng-container>
+         <ng-container *ngIf="f.number.errors.minlength">Please provide a Mobile No.</ng-container>
+         <ng-container *ngIf="f.number.errors.maxlength">This doesn't seem like a Mobile No.</ng-container>
+       </div>
+      </div>
+      <div class="field_wrap">
         <input type="password" formControlName="password" name="password" class="text_field"
                placeholder="Your Password">
       </div>

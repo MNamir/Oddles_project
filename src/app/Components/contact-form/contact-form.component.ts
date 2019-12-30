@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import validate = WebAssembly.validate;
 import {reduce} from 'rxjs/operators';
@@ -16,7 +16,8 @@ export class ContactFormComponent implements OnInit {
   isChecked: boolean;
   userValue: string;
   emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
+  letters = /^[A-Za-z]+$/;
+  num: string;
   constructor(private formBuilder: FormBuilder) {
   }
 
@@ -30,7 +31,8 @@ export class ContactFormComponent implements OnInit {
       password: ['', [Validators.required]],
       confirmpassword: ['', [Validators.required]],
       message: ['', [Validators.required, Validators.minLength(30), Validators.maxLength(150)]],
-      Termsconditions: [false, [Validators.requiredTrue]]
+      Termsconditions: [false, [Validators.requiredTrue]],
+      number: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]]
     });
     // document.getElementById('username').addEventListener('change', this.worldMarch);
   }
@@ -58,6 +60,13 @@ export class ContactFormComponent implements OnInit {
         return 'red';
       } else if (this.isChecked === undefined) {
       return '#4a4949';
+    }
+  }
+  numBer() {
+    if (this.num) {
+      if (this.num.match(this.letters)) {
+        this.num = '';
+      }
     }
   }
   match() {

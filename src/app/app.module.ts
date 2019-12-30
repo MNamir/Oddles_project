@@ -14,7 +14,7 @@ import { ServicetypeComponent } from './Components/servicetype/servicetype.compo
 import { TrendtypeComponent } from './Components/trendtype/trendtype.component';
 import {CarouselModule} from 'ngx-owl-carousel-o';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {PopupComponent} from './Components/popup/popup.component';
 
 @NgModule({
@@ -31,13 +31,14 @@ import {PopupComponent} from './Components/popup/popup.component';
     TrendtypeComponent,
     PopupComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    CarouselModule,
-    BrowserAnimationsModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        CarouselModule,
+        BrowserAnimationsModule,
+        ReactiveFormsModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
